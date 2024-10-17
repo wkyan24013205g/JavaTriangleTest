@@ -20,15 +20,35 @@ public class TriangleTest {
     public void testIsoceles() {
         Triangle t1 = new Triangle(3, 3, 5);
         assertEquals("Isosceles", t1.getTriangleType());
+    
+        Triangle t2 = new Triangle(3, 5, 3);
+        assertEquals("Isosceles", t2.getTriangleType());
+        
+        Triangle t3 = new Triangle(5, 3, 3);
+        assertEquals("Isosceles", t3.getTriangleType());
     }
 
     @Test
     public void testNotTriangle1() {
-        //TODO: add your test cases 
+        Triangle t1 = new Triangle(3, 3, 7);
+        assertEquals("Error: Not a triangle", t1.getTriangleType());
+
+        Triangle t2 = new Triangle(3, 6, 3);
+        assertEquals("Error: Not a triangle", t2.getTriangleType());
+
+        Triangle t3 = new Triangle(7, 3, 3);
+        assertEquals("Error: Not a triangle", t3.getTriangleType());
     }
 
     @Test
     public void sidesShouldBePositive() {
-        //TODO: add your test cases 
+        Triangle t1 = new Triangle(3, -3, 5); 
+        assertEquals("Error: The length should be positive", t1.getTriangleType());
+
+        Triangle t2 = new Triangle(-3, 3, 5); 
+        assertEquals("Error: The length should be positive", t2.getTriangleType());
+
+        Triangle t3 = new Triangle(3, 3, -5); 
+        assertEquals("Error: The length should be positive", t3.getTriangleType());
     }
 }
